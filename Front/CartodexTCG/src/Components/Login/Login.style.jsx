@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DivFormLogin = styled.div`
+export const DivFormLogin = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,10 +39,20 @@ export const InputPassword = styled.input`
 
 export const ButtonConnect = styled.button`
     margin-top: 5vh;
-    width: 10vw;
+    width: 15vw;
     height: 5vh;
     background-color: #50D9B0 ;
     border: none;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+`;
+
+export const DivLabel = styled.div`
+        display: flex;
+        margin-top: 2vh;
+        gap: 6vw;
+`;
+
+export const LabelNav = styled.a`
+    color: black;
 `;
