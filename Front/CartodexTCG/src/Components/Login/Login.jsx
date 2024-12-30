@@ -1,5 +1,6 @@
 import {
-    ButtonConnect , DivFormLogin ,
+    ButtonConnect ,
+    DivFormLogin ,
     DivLabel ,
     DivTitleForm ,
     InputEmail ,
@@ -12,7 +13,7 @@ export const Login = () => {
 
     return (
         <>
-            <DivFormLogin>
+            <DivFormLogin >
                 <DivTitleForm>CONNEXION</DivTitleForm>
                 <InputEmail placeholder="EMAIL"/>
                 <InputPassword placeholder="MOT DE PASSE"/>
