@@ -3,6 +3,7 @@ import { Login } from "../Components/Login/Login.jsx";
 import { Header } from "../Components/Header/Header.jsx";
 import { Footer } from "../Components/Footer/Footer.jsx";
 import { DivContent } from "./AppRoutes.style.jsx";
+import { Register } from "../Components/Register/Register.jsx";
 
 export const AppRoutes = () => {
     return (
@@ -13,6 +14,7 @@ export const AppRoutes = () => {
                     <Routes>
                         <Route path="/" element={<p>It"s works</p>}/>
                         <Route path="/login" element={<Login/>}/>
+                        <Route path="/register" element={<Register/>}/>
                         <Route path="*" element={<p>Erreur 404</p>}/>
                     </Routes>
                 </DivContent>
