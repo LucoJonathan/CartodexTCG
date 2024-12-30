@@ -1,15 +1,20 @@
-import { DivHeader , DivLogo , DivNav , Logo } from "./Header.style.jsx";
+import { DivHeader , DivHouse , DivLogo , DivNav , DivUser , Logo , StyledIcon } from "./Header.style.jsx";
+import { faCircleUser , faHouse } from "@fortawesome/free-solid-svg-icons";
 
-export const Header = () =>{
-
-    return(
+export const Header = () => {
+    return (
         <>
             <DivHeader>
-                <DivLogo>
-                    <Logo src="vite.svg"/>
-                </DivLogo>
                 <DivNav>
-                    <p>ihfqoizehfiozqh</p>
+                    <DivLogo>
+                        <Logo src="vite.svg" />
+                    </DivLogo>
+                    <DivHouse>
+                        <StyledIcon icon={faHouse} />
+                    </DivHouse>
+                    <DivUser>
+                        <StyledIcon icon={faCircleUser}/>
+                    </DivUser>
                 </DivNav>
             </DivHeader>
         </>
