@@ -1,8 +1,15 @@
+import { DivFormLogin , DivTitleForm , InputEmail , InputPassword } from "./Login.style.jsx";
+
+
 export const Login = () => {
 
-return(
-    <>
-            <p>Login page</p>
-    </>
-)
+    return (
+        <>
+            <DivFormLogin>
+                <DivTitleForm>CONNEXION</DivTitleForm>
+                <InputEmail placeholder="EMAIL"/>
+                <InputPassword placeholder="MOT DE PASSE"/>
+            </DivFormLogin>
+        </>
+    )
 };

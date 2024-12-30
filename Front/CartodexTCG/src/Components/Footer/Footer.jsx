@@ -5,7 +5,7 @@ export const Footer = () => {
 
     return (<>
             <DivFooter>
-                Copyright-2024
+                <p>Copyright-2024</p>
             </DivFooter>
     </>);
 };

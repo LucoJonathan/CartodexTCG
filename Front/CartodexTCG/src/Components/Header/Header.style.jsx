@@ -23,4 +23,4 @@ export const StyledIcon = styled ( FontAwesomeIcon )`
 export const DivUser = styled.div`margin-right: 1%;`;
 export const DivHouse = styled.div``;
 export const DivLogo = styled.div``;
-export const Logo = styled.img`width: 108px;`;
+export const Logo = styled.img`width: 10vh;`;
