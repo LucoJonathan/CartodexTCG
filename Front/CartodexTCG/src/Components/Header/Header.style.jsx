@@ -7,6 +7,7 @@ export const DivHeader = styled.div`
     max-height: 10vh;
     margin: 0;
     background-color: #7678db;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 `;
 
 export const DivNav = styled.div`
