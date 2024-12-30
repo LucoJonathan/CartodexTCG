@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const DivHeader = styled.div`
     display: flex;
-    max-height: 108px;
+    max-height: 10vh;
     margin: 0;
     background-color: #7678db;
 `;
