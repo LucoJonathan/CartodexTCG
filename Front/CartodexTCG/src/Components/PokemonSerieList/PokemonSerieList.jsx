@@ -7,61 +7,61 @@ export const PokemonSerieList = () => {
             <DivRow>
                 <Link to={ `/ecarlate-et-violet` }>
                     <ButtonCard>
-                        <PictureSeason src="EV.webp"/>
+                        <PictureSeason src="pokemon/EV.webp"/>
                     </ButtonCard>
                 </Link>
                 <Link to={ `/epee-et-bouclier` }>
                     <ButtonCard>
-                        <PictureSeason src="EB.png"/>
+                        <PictureSeason src="pokemon/EB.png"/>
                     </ButtonCard>
                 </Link>
                 <Link to={ `/soleil-et-lune` }>
                     <ButtonCard>
-                        <PictureSeason src="SL.png"/>
+                        <PictureSeason src="pokemon/SL.png"/>
                     </ButtonCard>
                 </Link>
                 <Link to={ `/xy` }>
                     <ButtonCard>
-                        <PictureSeason src="XY.png"/>
+                        <PictureSeason src="pokemon/XY.png"/>
                     </ButtonCard>
                 </Link>
             </DivRow>
             <DivRow>
                 <Link to={ `/noir-et-blanc` }>
                     <ButtonCard>
-                        <PictureSeason src="NB.png"/>
+                        <PictureSeason src="pokemon/NB.png"/>
                     </ButtonCard>
                 </Link>
                 <Link to={ `/appel-des-legendes` }>
                     <ButtonCard>
-                        <PictureSeason src="Appel_Des_Legendes.png"/>
+                        <PictureSeason src="pokemon/Appel_Des_Legendes.png"/>
                     </ButtonCard>
                 </Link>
                 <Link to={ `/hearthGold-soulSilver` }>
                     <ButtonCard>
-                        <PictureSeason src="HGSS.webp" />
+                        <PictureSeason src="pokemon/HGSS.webp" />
                     </ButtonCard>
                 </Link>
                 <Link to={ `/platine` }>
                     <ButtonCard>
-                        <PictureSeason src="Platine.png"/>
+                        <PictureSeason src="pokemon/Platine.png"/>
                     </ButtonCard>
                 </Link>
             </DivRow>
             <DivRow>
                 <Link to={ `/diamant-et-perle` }>
                     <ButtonCard>
-                        <PictureSeason src="DP.png"/>
+                        <PictureSeason src="pokemon/DP.png"/>
                     </ButtonCard>
                 </Link>
                 <Link to={ `/ex` }>
                     <ButtonCard>
-                        <PictureSeason src="EX.png"/>
+                        <PictureSeason src="pokemon/EX.png"/>
                     </ButtonCard>
                 </Link>
                 <Link to={ `/wizards` }>
                     <ButtonCard>
-                        <PictureSeason src="Wizards.png"/>
+                        <PictureSeason src="pokemon/Wizards.png"/>
                     </ButtonCard>
                 </Link>
             </DivRow>
