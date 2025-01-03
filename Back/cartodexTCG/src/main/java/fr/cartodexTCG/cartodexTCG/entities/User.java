@@ -26,9 +26,6 @@ public class User extends EntityGeneric {
     private String email;
     @Column(nullable = false)
     private String password;
-
-    // test push github
-
     /*
      *
      *   Add TCG Card
