@@ -16,6 +16,7 @@ public class UserServiceImpl extends ServiceImplGeneric<User,
         UserRepository,
         UserMapper>
         implements UserService {
+
     public UserServiceImpl(UserMapper mapper, UserRepository repository) {
         super(mapper, repository);
     }

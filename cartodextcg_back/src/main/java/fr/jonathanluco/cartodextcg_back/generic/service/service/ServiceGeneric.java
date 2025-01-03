@@ -10,6 +10,8 @@ import java.util.List;
  *
  * @param <D> the type parameter generic dto
  */
+
+
 public interface ServiceGeneric<D>{
     /**
      * Save d.

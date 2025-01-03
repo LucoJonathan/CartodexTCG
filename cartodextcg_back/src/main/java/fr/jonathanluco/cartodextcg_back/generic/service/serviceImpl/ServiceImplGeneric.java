@@ -3,9 +3,11 @@ package fr.jonathanluco.cartodextcg_back.generic.service.serviceImpl;
 import fr.jonathanluco.cartodextcg_back.generic.mapper.MapperGeneric;
 import fr.jonathanluco.cartodextcg_back.generic.service.service.ServiceGeneric;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -18,8 +20,9 @@ import java.util.List;
  * @param <R> the type parameter generic repository
  * @param <M> the type parameter generic mapper
  */
-
+@Service
 public class ServiceImplGeneric<E, D, R extends JpaRepository<E, Long>, M extends MapperGeneric<E, D>> implements ServiceGeneric<D> {
+
     private final M mapper;
     private final R repository;
 
@@ -27,6 +30,7 @@ public class ServiceImplGeneric<E, D, R extends JpaRepository<E, Long>, M extend
         this.mapper = mapper;
         this.repository = repository;
     }
+
 
     @Override
     public D save(D dto) {

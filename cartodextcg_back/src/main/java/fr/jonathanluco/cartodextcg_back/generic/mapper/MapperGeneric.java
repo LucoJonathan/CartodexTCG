@@ -1,5 +1,7 @@
 package fr.jonathanluco.cartodextcg_back.generic.mapper;
 
+import org.mapstruct.Mapper;
+
 import java.util.List;
 
 /**
@@ -8,6 +10,7 @@ import java.util.List;
  * @param <E> the type parameter generic entity
  * @param <D> the type parameter generic dto
  */
+
 public interface MapperGeneric<E,D> {
     /**
      * To dto d.
