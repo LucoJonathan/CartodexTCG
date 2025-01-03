@@ -27,6 +27,8 @@ public class User extends EntityGeneric {
     @Column(nullable = false)
     private String password;
 
+    // test push github
+
     /*
      *
      *   Add TCG Card
