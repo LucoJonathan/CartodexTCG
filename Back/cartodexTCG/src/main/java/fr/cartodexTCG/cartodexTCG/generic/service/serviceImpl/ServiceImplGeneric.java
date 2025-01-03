@@ -10,6 +10,15 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
+
+/**
+ * The type Service impl generic.
+ *
+ * @param <E> the type parameter generic entity
+ * @param <D> the type parameter generic dto
+ * @param <R> the type parameter generic repository
+ * @param <M> the type parameter generic mapper
+ */
 @RequiredArgsConstructor
 public class ServiceImplGeneric<E, D, R extends JpaRepository<E, Long>, M extends MapperGeneric<E, D>> implements ServiceGeneric<D> {
     private final M mapper;

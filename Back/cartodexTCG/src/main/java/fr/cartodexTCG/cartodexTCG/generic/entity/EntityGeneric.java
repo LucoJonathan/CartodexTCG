@@ -9,6 +9,9 @@ import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 
+/**
+ * The type Entity generic.
+ */
 @MappedSuperclass
 @Getter
 @Setter
