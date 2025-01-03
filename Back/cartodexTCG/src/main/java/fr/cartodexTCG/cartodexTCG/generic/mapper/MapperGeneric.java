@@ -1,5 +1,7 @@
 package fr.cartodexTCG.cartodexTCG.generic.mapper;
 
+import java.util.List;
+
 /**
  * The interface Mapper generic.
  *
@@ -22,4 +24,20 @@ public interface MapperGeneric<E,D> {
      * @return the e
      */
     E toEntity(D dto);
+
+    /**
+     * To dto list list.
+     *
+     * @param entities the entities
+     * @return the list
+     */
+    List<D> toDtoList(List<E> entities);
+
+    /**
+     * To entity list list.
+     *
+     * @param dtos the dtos
+     * @return the list
+     */
+    List<E> toEntityList(List<D> dtos);
 }
