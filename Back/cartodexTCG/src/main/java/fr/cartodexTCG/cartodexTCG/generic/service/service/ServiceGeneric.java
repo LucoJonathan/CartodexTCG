@@ -48,4 +48,6 @@ public interface ServiceGeneric<D>{
      * @return the page
      */
     Page<D> findAll(Pageable pageable);
+
+    D getById(long id);
 }

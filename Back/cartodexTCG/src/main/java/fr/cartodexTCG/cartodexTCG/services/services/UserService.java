@@ -10,5 +10,7 @@ import java.util.List;
 /**
  * The interface User service.
  */
+
 public interface UserService extends ServiceGeneric<UserDto> {
+
 }
