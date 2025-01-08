@@ -14,11 +14,13 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
+
     @Autowired
     private UserService service;
 
-    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_NDJSON_VALUE)
-    public ResponseEntity<UserDto> getUserById(@PathVariable int id) {
+
+    @GetMapping(value = "/getUser/{id}", produces = MediaType.APPLICATION_NDJSON_VALUE)
+    public ResponseEntity<UserDto> getUserById(@PathVariable long id) {
         return ResponseEntity.ok(service.getById(id));
     }
 

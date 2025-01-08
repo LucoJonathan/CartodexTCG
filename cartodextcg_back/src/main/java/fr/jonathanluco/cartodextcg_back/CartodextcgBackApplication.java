@@ -9,5 +9,4 @@ public class CartodextcgBackApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CartodextcgBackApplication.class, args);
 	}
-
 }

@@ -7,18 +7,19 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 /**
  * The type Entity generic.
  */
-@MappedSuperclass
+
 @Getter
 @Setter
-@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class EntityGeneric implements Serializable {
+@MappedSuperclass
+public abstract class EntityGeneric{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id ;

@@ -1,5 +1,6 @@
 package fr.jonathanluco.cartodextcg_back.generic.service.service;
 
+import jakarta.persistence.MappedSuperclass;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
