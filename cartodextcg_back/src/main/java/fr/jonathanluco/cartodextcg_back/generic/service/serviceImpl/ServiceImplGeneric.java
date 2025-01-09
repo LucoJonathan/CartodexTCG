@@ -3,6 +3,7 @@ package fr.jonathanluco.cartodextcg_back.generic.service.serviceImpl;
 import fr.jonathanluco.cartodextcg_back.generic.mapper.MapperGeneric;
 import fr.jonathanluco.cartodextcg_back.generic.service.service.ServiceGeneric;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.persistence.MappedSuperclass;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,26 +11,17 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
-/**
- * The type Service impl generic.
- *
- * @param <E> the type parameter generic entity
- * @param <D> the type parameter generic dto
- * @param <R> the type parameter generic repository
- * @param <M> the type parameter generic mapper
- */
 @Service
+@MappedSuperclass
 public class ServiceImplGeneric<E, D, R extends JpaRepository<E, Long>, M extends MapperGeneric<E, D>> implements ServiceGeneric<D> {
 
-    private final M mapper;
-    private final R repository;
+    protected final M mapper;
+    protected final R repository;
 
     public ServiceImplGeneric(M mapper, R repository) {
         this.mapper = mapper;
         this.repository = repository;
     }
-
 
     @Override
     public D save(D dto) {

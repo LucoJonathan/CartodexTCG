@@ -1,21 +1,19 @@
 package fr.jonathanluco.cartodextcg_back.generic.dto;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.MappedSuperclass;
+import lombok.*;
+
+import java.io.Serializable;
 
 
-/**
- * The type Dto generic.
- */
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public abstract class DtoGeneric {
-
+@Getter
+@Setter
+@MappedSuperclass
+public abstract class DtoGeneric implements Serializable {
+    private static final long serialVersionUID = 1L;
     private long id;
     private int version;
 

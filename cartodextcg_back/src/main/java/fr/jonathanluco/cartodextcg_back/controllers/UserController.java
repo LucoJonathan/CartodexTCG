@@ -19,8 +19,10 @@ public class UserController {
     private UserService service;
 
 
-    @GetMapping(value = "/getUser/{id}", produces = MediaType.APPLICATION_NDJSON_VALUE)
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<UserDto> getUserById(@PathVariable long id) {
+        System.out.println("Voilà l'id récupéré = " + id);
+        System.out.println("Voila la réponse de service = " + service.getById(id));
         return ResponseEntity.ok(service.getById(id));
     }
 

@@ -14,12 +14,18 @@ import java.io.Serializable;
  * The type Entity generic.
  */
 
+
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @MappedSuperclass
-public abstract class EntityGeneric{
+public abstract class EntityGeneric implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id ;
