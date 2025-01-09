@@ -1,9 +1,13 @@
 package fr.jonathanluco.cartodextcg_back.generic.service.serviceImpl;
 
+import fr.jonathanluco.cartodextcg_back.generic.dto.DtoGeneric;
+import fr.jonathanluco.cartodextcg_back.generic.entity.EntityGeneric;
 import fr.jonathanluco.cartodextcg_back.generic.mapper.MapperGeneric;
 import fr.jonathanluco.cartodextcg_back.generic.service.service.ServiceGeneric;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.persistence.MappedSuperclass;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,15 +17,11 @@ import java.util.List;
 
 @Service
 @MappedSuperclass
-public class ServiceImplGeneric<E, D, R extends JpaRepository<E, Long>, M extends MapperGeneric<E, D>> implements ServiceGeneric<D> {
+@RequiredArgsConstructor
+public class ServiceImplGeneric<E extends EntityGeneric, D extends DtoGeneric> implements ServiceGeneric<D> {
 
-    protected final M mapper;
-    protected final R repository;
-
-    public ServiceImplGeneric(M mapper, R repository) {
-        this.mapper = mapper;
-        this.repository = repository;
-    }
+    private final MapperGeneric<E,D> mapper;
+    private final JpaRepository<E,Long> repository;
 
     @Override
     public D save(D dto) {
@@ -35,7 +35,6 @@ public class ServiceImplGeneric<E, D, R extends JpaRepository<E, Long>, M extend
 
     @Override
     public void deleteById(long id) {
-
         if (!repository.existsById(id)) {
             throw new EntityNotFoundException("Entity with ID " + id + " not found");
         }
@@ -54,6 +53,7 @@ public class ServiceImplGeneric<E, D, R extends JpaRepository<E, Long>, M extend
 
     @Override
     public D getById(long id) {
-        return mapper.toDto(repository.findById(id).orElseThrow(EntityNotFoundException::new));
+        E entity = repository.findById(id).orElseThrow(() -> new EntityNotFoundException("Entity with ID " + id + " not found"));
+        return mapper.toDto(entity);
     }
 }

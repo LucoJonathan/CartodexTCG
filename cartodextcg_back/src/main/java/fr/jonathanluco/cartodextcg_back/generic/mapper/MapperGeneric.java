@@ -1,8 +1,12 @@
 package fr.jonathanluco.cartodextcg_back.generic.mapper;
 
-public interface MapperGeneric<E, D> {
-    D toDto(E entity);
 
+import fr.jonathanluco.cartodextcg_back.generic.dto.DtoGeneric;
+import fr.jonathanluco.cartodextcg_back.generic.entity.EntityGeneric;
+
+public interface MapperGeneric<E extends EntityGeneric, D extends DtoGeneric> {
+
+    D toDto(E entity);
     E toEntity(D dto);
 }
 

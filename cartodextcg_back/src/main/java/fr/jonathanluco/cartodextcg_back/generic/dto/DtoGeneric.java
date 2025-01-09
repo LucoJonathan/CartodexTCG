@@ -11,9 +11,11 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
+@ToString
 @MappedSuperclass
-public abstract class DtoGeneric implements Serializable {
-    private static final long serialVersionUID = 1L;
+public abstract class DtoGeneric {
+
     private long id;
     private int version;
 
