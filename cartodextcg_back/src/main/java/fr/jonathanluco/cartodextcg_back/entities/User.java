@@ -1,11 +1,10 @@
 package fr.jonathanluco.cartodextcg_back.entities;
 
-import fr.jonathanluco.cartodextcg_back.generic.entity.EntityGeneric;
+import fr.jonathanluco.generic.entity.EntityGeneric;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 
 

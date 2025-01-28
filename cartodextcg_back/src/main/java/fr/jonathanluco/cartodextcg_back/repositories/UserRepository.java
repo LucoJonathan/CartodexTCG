@@ -1,10 +1,8 @@
 package fr.jonathanluco.cartodextcg_back.repositories;
 
 import fr.jonathanluco.cartodextcg_back.entities.User;
-import org.springframework.data.jpa.repository.JpaRepository;
+import fr.jonathanluco.generic.repository.RepositoryGeneric;
 
-import java.util.Optional;
-
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends RepositoryGeneric<User> {
     User findById(long id);
 }

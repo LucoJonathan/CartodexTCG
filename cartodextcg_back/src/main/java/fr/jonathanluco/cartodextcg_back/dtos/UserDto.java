@@ -1,6 +1,6 @@
 package fr.jonathanluco.cartodextcg_back.dtos;
 
-import fr.jonathanluco.cartodextcg_back.generic.dto.DtoGeneric;
+import fr.jonathanluco.generic.dto.DtoGeneric;
 import lombok.*;
 
 @NoArgsConstructor
