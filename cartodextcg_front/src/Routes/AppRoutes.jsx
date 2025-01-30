@@ -19,7 +19,7 @@ export const AppRoutes = () => {
                         <Route path="/" element={ <Login/> }/>
                         <Route path="/register" element={ <Register/> }/>
                         {/*Routes protégées*/ }
-                        <Route element={ <ProtectedRoute requiredRole="PUBLIC"/> }>
+                        <Route element={ <ProtectedRoute requiredRoles={["PUBLIC"]}/> }>
                             <Route path="/home" element={ <Home/> }/>
                             <Route path="/pokemon" element={ <PokemonSerieList/> }/>
                         </Route>

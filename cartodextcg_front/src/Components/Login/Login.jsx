@@ -10,6 +10,9 @@ import {
 import { DivError , LabelError } from "../Register/Register.style.jsx";
 import { useState } from "react";
 import { LoginService } from "../../Services/LoginService.js";
+import { useNavigate } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
+import { useAuth } from "../../Services/AuthProvider.jsx";
 
 export const Login = () => {
     const [ showError , setShowError ] = useState ( false );
@@ -19,6 +22,9 @@ export const Login = () => {
     } );
     const [ errors , setErrors ] = useState ( "" );
     const mailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const navigate = useNavigate();
+    const { authLogin } = useAuth();
+
 
     const verifDataForm = () => {
         let newErrors = "";
@@ -52,12 +58,13 @@ export const Login = () => {
             return;
         }
         try {
-            await LoginService.login( formData );
-            alert ( "Connexion réussi !" );
+            await LoginService.login( formData, authLogin );
+            navigate("/home");
         } catch (error) {
             console.log ( "Erreur lors de la connexion : " + error );
             alert ( "Une erreur est survenu lors de l'inscription !" );
         }
+
     }
 
     return (

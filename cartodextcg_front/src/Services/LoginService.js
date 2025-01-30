@@ -1,7 +1,9 @@
 import { instance } from "./Axios.js";
 
 
-const login = async (formdata) =>{
+
+const login = async (formdata, authLogin) =>{
+
     try {
         const response = await instance.post("/auth/login", {
             "email": formdata.email,
@@ -9,9 +11,10 @@ const login = async (formdata) =>{
         } )
         // Vérifiez si la réponse contient un token
         if (response.data) {
-            // Stockez le token dans la sessionStorage
-            sessionStorage.setItem('token', response.data);
-            console.log('Token stored in sessionStorage:', response.data);
+            const token = ({
+                key: "token",
+                value: response.data});
+           authLogin(token)
         } else {
             console.error('No token received in the response');
         }
