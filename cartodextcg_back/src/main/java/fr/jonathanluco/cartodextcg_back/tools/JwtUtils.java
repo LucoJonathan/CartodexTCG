@@ -1,5 +1,6 @@
 package fr.jonathanluco.cartodextcg_back.tools;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -9,8 +10,8 @@ import java.util.*;
 
 @Component
 public class JwtUtils {
-
-    private final String SECRETKEY = System.getenv("JWT_SECRET_KEY"); // Remplacez par une clé secrète robuste
+    @Value("${jwt.secret.key}")
+    private String SECRETKEY; // Remplacez par une clé secrète robuste
     private final long EXPIRATIONTIME = 86400000; // 24 heures
 
     // Générer un token avec le username et les rôles
