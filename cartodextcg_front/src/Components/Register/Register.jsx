@@ -98,8 +98,11 @@ export const Register = () => {
         setShowError ( false )
         verifData ();
 
-        // Vérification des erreurs avant de procéder à l'appel API
-        if (Object.keys(errors).length > 0) return;
+        // Si des erreurs existent, n'appelle pas l'API
+        if (showError) {
+            alert("Il y a des erreurs à corriger avant d'envoyer le formulaire.");
+            return;
+        }
 
         try {
             await RegisterService.register ( formData );
