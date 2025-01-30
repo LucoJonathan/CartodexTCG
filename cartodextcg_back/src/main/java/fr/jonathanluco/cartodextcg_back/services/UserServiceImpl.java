@@ -62,7 +62,7 @@ public class UserServiceImpl extends GenericServiceImpl<UserDto, User, UserRepos
         }
         User user = mapper.toEntity(userDto);
         user.setPassword(passwordService.hashPassword(userDto.getPassword()));
-
-        return mapper.toDto(userRepository.saveAndFlush(user));
+        userRepository.saveAndFlush(user);
+        return mapper.toDto(user);
     }
 }

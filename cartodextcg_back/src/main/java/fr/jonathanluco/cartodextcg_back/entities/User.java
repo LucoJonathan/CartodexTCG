@@ -15,7 +15,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 public class User extends BaseEntity {
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String username;
     @Column(nullable = false)
     private String firstName;
@@ -46,6 +46,14 @@ public class User extends BaseEntity {
     public void removeRole(Roles role) {
         this.roles.remove(role);
     }
+
+    @PrePersist
+    public void prePersist() {
+        if (roles == null || roles.isEmpty()) {
+            roles = new HashSet<>(Set.of(Roles.PUBLIC));  // Initialisation des rôles avant l'insertion
+        }
+    }
+
 
     /*
      *
