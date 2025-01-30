@@ -7,12 +7,13 @@ export const DivFormRegister = styled.form`
     margin: auto;
 `;
 
-export const DivFormRegisterContent = styled.form`
+export const DivFormRegisterContent = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-content: center;
     width: 60vw;
-    height: 60vh;
+    height: 50vh;
     border-radius: 45px;
     margin: auto;
     background-color: rgba(173, 203, 219, 0.5);
@@ -24,9 +25,9 @@ export const Div1 = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2vh;
     width: 50%;
-    height: 70%;
-    margin-top: 1vh;
+    height: 60%;
 `;
 
 export const Div2 = styled.div`
@@ -34,9 +35,9 @@ export const Div2 = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2vh;
     width: 50%;
-    height: 70%;
-    margin-top: 1vh;
+    height: 60%;
 `;
 
 export const Div3 = styled.div`
@@ -49,11 +50,10 @@ export const Div3 = styled.div`
 `;
 
 export const InputRegister = styled.input`
-    padding: 1.5%;
+    padding: 2%;
     width: 70%;
     border-radius: 10px;
     border: none;
-    margin-top: 5vh;
     font-size: larger;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 `;
@@ -67,6 +67,19 @@ export const ButtonRegister = styled.button`
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 `;
 
-export const LabelRegister = styled.label`
+export const LabelRegister = styled.h1`
+    display: flex;
+    align-items: center;
     font-size: xx-large;
+    height: 5vh;
+`;
+
+export const DivError = styled.div`
+    display: flex;
+    align-items: center;
+    height: 5px;
+`;
+
+export const LabelError = styled.label`
+    color: red;
 `;

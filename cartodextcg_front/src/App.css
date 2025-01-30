@@ -1,6 +1,8 @@
-
 #root {
   background-color: #50a9d9 ;
   margin: 0;
   height: 100vh;
+}
+body{
+  margin: 0;
 }

@@ -10,6 +10,10 @@ export const ButtonCard = styled.button`
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    &:hover{
+        transform: scale(102%);
+        cursor: pointer;
+    }
 `;
 
 export const DivPokemonSeason = styled.div`
