@@ -9,6 +9,7 @@ import {
 } from "./Login.style.jsx";
 import { DivError , LabelError } from "../Register/Register.style.jsx";
 import { useState } from "react";
+import { LoginService } from "../../Services/LoginService.js";
 
 export const Login = () => {
     const [ showError , setShowError ] = useState ( false );
@@ -23,7 +24,7 @@ export const Login = () => {
         let newErrors = "";
         if (! formData.password || ! formData.email) {
             newErrors = "Tout les champs ne sont pas remplis";
-        }else if(!mailRegex.test(!formData.email)){
+        }else if(mailRegex.test(!formData.email)){
             newErrors = "Adresse mail non valide";
         }
 
@@ -50,7 +51,13 @@ export const Login = () => {
             alert("Il y a des erreurs à corriger avant d'envoyer le formulaire.");
             return;
         }
-
+        try {
+            await LoginService.login( formData );
+            alert ( "Connexion réussi !" );
+        } catch (error) {
+            console.log ( "Erreur lors de la connexion : " + error );
+            alert ( "Une erreur est survenu lors de l'inscription !" );
+        }
     }
 
     return (
