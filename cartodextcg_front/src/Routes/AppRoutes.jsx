@@ -14,8 +14,7 @@ export const AppRoutes = () => {
                 <Header/>
                 <DivContent>
                     <Routes>
-                        <Route path="/" element={<p>It"s works</p>}/>
-                        <Route path="/login" element={<Login/>}/>
+                        <Route path="/" element={<Login/>}/>
                         <Route path="/register" element={<Register/>}/>
                         <Route path="/home" element={<Home/>}/>
                         <Route path="/pokemon" element={<PokemonSerieList/>}/>

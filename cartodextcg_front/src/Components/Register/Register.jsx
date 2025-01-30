@@ -157,7 +157,7 @@ export const Register = () => {
                 <Div3>
                     <ButtonRegister type="submit">S'inscrire</ButtonRegister>
                     <div>
-                        <LabelNav href="/login">Se connecter</LabelNav>
+                        <LabelNav href="/">Se connecter</LabelNav>
                     </div>
                 </Div3>
             </DivFormRegisterContent>
