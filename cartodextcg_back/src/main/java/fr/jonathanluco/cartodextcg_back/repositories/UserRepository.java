@@ -1,8 +1,9 @@
 package fr.jonathanluco.cartodextcg_back.repositories;
 
 import fr.jonathanluco.cartodextcg_back.entities.User;
-import fr.jonathanluco.generic.repository.RepositoryGeneric;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends RepositoryGeneric<User> {
-    User findById(long id);
+public interface UserRepository extends JpaRepository<User, Long> {
+    User findByEmail(String email);
+    boolean existsByEmail(String email);
 }
