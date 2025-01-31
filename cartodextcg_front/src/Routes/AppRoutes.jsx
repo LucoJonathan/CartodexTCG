@@ -7,6 +7,7 @@ import { Register } from "../Components/Register/Register.jsx";
 import { PokemonSerieList } from "../Components/PokemonSerieList/PokemonSerieList.jsx";
 import { Home } from "../Components/Home/Home.jsx";
 import { ProtectedRoute } from "./ProtectedRoute.jsx";
+import { Profile } from "../Components/Profile/Profile.jsx";
 
 export const AppRoutes = () => {
     return (
@@ -21,6 +22,7 @@ export const AppRoutes = () => {
                         {/*Routes protégées*/ }
                         <Route element={ <ProtectedRoute requiredRoles={["PUBLIC"]}/> }>
                             <Route path="/home" element={ <Home/> }/>
+                            <Route path="/profile" element={<Profile/>}/>
                             <Route path="/pokemon" element={ <PokemonSerieList/> }/>
                         </Route>
                         {/*Routes 404*/ }

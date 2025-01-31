@@ -15,7 +15,7 @@ export const ProtectedRoute = ({requiredRoles}) => {
 
     // Si des rôles sont requis, vérifiez que l'utilisateur a au moins un des rôles requis
     if (requiredRoles && !requiredRoles.some((role) => userRoles.includes(role))) {
-        return <Navigate to="/" replace />;
+        return <Navigate to="/home" replace />;
     }
 
     // Sinon, affichez la route demandée

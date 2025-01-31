@@ -18,10 +18,20 @@ export const DivNav = styled.div`
 `;
 
 export const StyledIcon = styled ( FontAwesomeIcon )`
+    display: flex;
+    justify-items: center;
     color: white;
     font-size: 40px;
 `;
-export const DivUser = styled.div`margin-right: 1%;`;
+
 export const DivHouse = styled.div``;
 export const DivLogo = styled.div``;
 export const Logo = styled.img`width: 10vh;`;
+
+export const DivUser = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 6%;
+
+`;
