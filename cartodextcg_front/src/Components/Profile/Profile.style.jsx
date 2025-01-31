@@ -131,4 +131,5 @@ export const PicturePokemon = styled.img`
     width: 90%;
     border-radius: 4%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: none;
 `;
