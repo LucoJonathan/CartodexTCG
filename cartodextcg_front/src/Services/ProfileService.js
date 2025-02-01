@@ -2,13 +2,12 @@ import { instance } from "./Axios.js";
 
 
 const retrieveUserAllInfo = async (id) => {
-        try {
-            const response = await instance.get(`/user/${id}`);
-            return response.data;
-        }catch(error){
-            console.error("Récupération des données user impossible" + error);
-            throw error;
-        }
+    try {
+        return await instance.get ( `/user/userDetails/${ id }` );
+    } catch (error) {
+        console.error ( "Récupération des données user impossible" + error );
+        throw error;
+    }
 }
 
 

@@ -9,6 +9,7 @@ import {
 import { LabelNav } from "../Login/Login.style.jsx";
 import { useEffect , useState } from "react";
 import { RegisterService } from "../../Services/RegisterService.js";
+import { useNavigate } from "react-router-dom";
 
 
 export const Register = () => {
@@ -18,20 +19,23 @@ export const Register = () => {
         password: "" ,
         firstName: "" ,
         lastName: "" ,
-        username: ""
+        username: "" ,
+        phoneNumber: ""
     } );
     const [ errors , setErrors ] = useState ( {
         email: "" ,
         password: "" ,
         firstName: "" ,
         lastName: "" ,
-        username: ""
+        username: "" ,
+        phoneNumber: ""
     } );
     const [ userEmailConfirm , setUserEmailConfirm ] = useState ( "" );
     const [ userPasswordConfirm , setUserPasswordConfirm ] = useState ( "" );
     const [ showError , setShowError ] = useState ( false );
     const mdpRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>]).{10,}$/;
     const mailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const navigate = useNavigate ();
 
     useEffect ( () => {
         if (formData.lastName && formData.firstName !== "") {
@@ -100,13 +104,13 @@ export const Register = () => {
 
         // Si des erreurs existent, n'appelle pas l'API
         if (showError) {
-            alert("Il y a des erreurs à corriger avant d'envoyer le formulaire.");
+            alert ( "Il y a des erreurs à corriger avant d'envoyer le formulaire." );
             return;
         }
 
         try {
             await RegisterService.register ( formData );
-            alert ( "Inscription réussi !" );
+            navigate ( "/" );
         } catch (error) {
             console.log ( "Erreur lors de l'inscription : " + error );
             alert ( "Une erreur est survenu lors de l'inscription !" );
