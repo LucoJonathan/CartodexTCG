@@ -1,4 +1,4 @@
-package fr.jonathanluco.cartodextcg_back.services;
+package fr.jonathanluco.cartodextcg_back.services.user;
 
 import fr.jonathanluco.cartodextcg_back.dtos.AuthRequest;
 import fr.jonathanluco.cartodextcg_back.dtos.UserDto;

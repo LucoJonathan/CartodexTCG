@@ -1,7 +1,7 @@
 package fr.jonathanluco.cartodextcg_back.controllers;
 
 import fr.jonathanluco.cartodextcg_back.dtos.AuthRequest;
-import fr.jonathanluco.cartodextcg_back.services.UserService;
+import fr.jonathanluco.cartodextcg_back.services.user.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

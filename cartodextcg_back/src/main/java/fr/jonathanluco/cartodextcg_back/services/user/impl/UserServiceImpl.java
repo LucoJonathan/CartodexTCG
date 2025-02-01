@@ -1,11 +1,13 @@
-package fr.jonathanluco.cartodextcg_back.services;
+package fr.jonathanluco.cartodextcg_back.services.user.impl;
 
 import fr.jonathanluco.cartodextcg_back.dtos.AuthRequest;
 import fr.jonathanluco.cartodextcg_back.dtos.TokenDto;
 import fr.jonathanluco.cartodextcg_back.dtos.UserDto;
 import fr.jonathanluco.cartodextcg_back.entities.User;
-import fr.jonathanluco.cartodextcg_back.mappers.UserMapper;
+import fr.jonathanluco.cartodextcg_back.mappers.user.UserMapper;
 import fr.jonathanluco.cartodextcg_back.repositories.UserRepository;
+import fr.jonathanluco.cartodextcg_back.services.PasswordService;
+import fr.jonathanluco.cartodextcg_back.services.user.UserService;
 import fr.jonathanluco.cartodextcg_back.tools.JwtUtils;
 import fr.jonathanluco.generic.base.services.GenericServiceImpl;
 

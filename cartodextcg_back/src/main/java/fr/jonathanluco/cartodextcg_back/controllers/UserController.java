@@ -1,7 +1,9 @@
 package fr.jonathanluco.cartodextcg_back.controllers;
 
+import fr.jonathanluco.cartodextcg_back.dtos.UserDetailsDto;
 import fr.jonathanluco.cartodextcg_back.dtos.UserDto;
-import fr.jonathanluco.cartodextcg_back.services.UserService;
+import fr.jonathanluco.cartodextcg_back.services.user.UserDetailsDtoService;
+import fr.jonathanluco.cartodextcg_back.services.user.UserService;
 import fr.jonathanluco.generic.base.controller.GenericController;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +21,17 @@ public class UserController extends GenericController<UserDto, UserService> {
     @Autowired
     private UserService service;
 
+    @Autowired
+    private UserDetailsDtoService userDetailsDtoService;
+
     @PostMapping(value = "/register" , consumes = "multipart/form-data", produces = "application/json")
     public ResponseEntity<UserDto> register(@ModelAttribute UserDto userDto){
         service.registerUser(userDto);
         return ResponseEntity.ok(userDto);
+    }
+
+    @GetMapping(value = "/userDetails/{id}")
+    public UserDetailsDto getUserDetails(@PathVariable("id") long id){
+        return userDetailsDtoService.getUserDetailsDtoById(id);
     }
 }
