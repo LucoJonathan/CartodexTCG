@@ -16,17 +16,9 @@ import { ProfileService } from "../../Services/ProfileService.js";
 
 export const Profile = () => {
 
-    const [isLoading, setIsLoading] = useState(true);
     const [isEditing, setIsEditing] = useState(false);
-
-    const [userInfos, setUserInfos] = useState({
-        username : "",
-        email : "",
-        phone : "",
-        firstName: "",
-        lastName : ""
-    });
-
+    const [userData, setUserData] = useState(null);
+    const [error, setError] = useState(null);
     const token = sessionStorage.getItem ( "token" );
     const decodedToken = {
         "id": jwtDecode ( token ).userId ,
@@ -44,43 +36,45 @@ export const Profile = () => {
         })
     }*/
 
-    useEffect(() => {
-        ProfileService.retrieveUserAllInfo(decodedToken.id)
-            .then((response) => {
-                setUserInfos({
-                    username: response.data.username || '',
-                    email: response.data.email || '',
-                    phone: response.data.phone || '',
-                    firstName: response.data.firstName || '',
-                    lastName: response.data.lastName || ''
-                });
-                setIsLoading(false);
-            })
-            .catch((e) => {
-                console.error('Erreur lors de la récupération des informations utilisateur :', e);
-            })
+
+
+
+   /* useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const data = await ProfileService.retrieveUserAllInfo(decodedToken.id);
+                setUserData(data); // On met les données dans l'état
+            } catch (err) {
+                setError("Impossible de récupérer les données utilisateur.");
+            }
+        };
+
+        fetchUserData();
     }, [decodedToken.id]);
+*/
+   /* if (error) return <div>{error}</div>;*/
+/*    if (!userData) return <div>Chargement...</div>;*/
 
     return (<>
-        {isLoading && <p>Chargement en cours...</p>}
-        { (token && !isLoading) &&
+        { (!userData  &&
+            <>
             <DivFormProfile>
-                <DivTitleProfile>{ userInfos.username }</DivTitleProfile>
+                <DivTitleProfile>fuqhgfiuzqgh{/*{ userData.username }*/}</DivTitleProfile>
                 <DivInfoProfile>
                     <DivInfoLeft>
-                        <DivInfoLeftCase>
+                        <DivInfoLeftCase>g
                             <DivInfoNameProfile>
-                                <InputNameInfo placeholder="NOM" value={userInfos.lastName} readOnly={!isEditing}/>
+                                <InputNameInfo placeholder="NOM" /*value={userData.lastName}*/ readOnly={!isEditing}/>
                             </DivInfoNameProfile>
                             <DivInfoNameProfile>
-                                <InputNameInfo placeholder="PRENOM" value={userInfos.firstName} readOnly={!isEditing}/>
+                                <InputNameInfo placeholder="PRENOM" /*value={userData.firstName}*/ readOnly={!isEditing}/>
                             </DivInfoNameProfile>
                         </DivInfoLeftCase>
                         <DivInfoLeftCase>
-                            <InputInfo placeholder="EMAIL" value={userInfos.email} readOnly={!isEditing} />
+                            <InputInfo placeholder="EMAIL" /*value={userData.email}*/ readOnly={!isEditing} />
                         </DivInfoLeftCase>
                         <DivInfoLeftCase>
-                            <InputInfo  placeholder="TELEPHONE" value={userInfos.phone} readOnly={!isEditing}/>
+                            <InputInfo  placeholder="TELEPHONE" /*value={userData.phone}*/ readOnly={!isEditing}/>
                         </DivInfoLeftCase>
                         <DivInfoLeftCase>{/*Ajouter quelque chose ici plus tard*/ }</DivInfoLeftCase>
                     </DivInfoLeft>
@@ -97,6 +91,8 @@ export const Profile = () => {
                         <ModifyIcon icon={ faPenToSquare }/>
                     </DivBottomModify>
                 </DivModifyProfile>
-            </DivFormProfile> }
+            </DivFormProfile>
+        </>
+        )}
     </>);
 }
