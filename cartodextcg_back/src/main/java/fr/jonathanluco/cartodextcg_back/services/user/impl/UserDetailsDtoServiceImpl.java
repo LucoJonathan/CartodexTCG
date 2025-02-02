@@ -22,9 +22,10 @@ public class UserDetailsDtoServiceImpl extends GenericServiceImpl<UserDetailsDto
         this.userDetailsDtoRepository = userDetailsDtoRepository;
     }
 
-
     @Override
     public UserDetailsDto getUserDetailsDtoById(long id) {
-        return  mapper.toDto(userDetailsDtoRepository.findUserById(id));
+        User user = userDetailsDtoRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
+        System.out.println(user.getUsername());
+        return  mapper.toDto(user);
     }
 }

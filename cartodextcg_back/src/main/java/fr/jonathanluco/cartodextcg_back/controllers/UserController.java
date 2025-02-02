@@ -8,6 +8,7 @@ import fr.jonathanluco.generic.base.controller.GenericController;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
@@ -30,8 +31,9 @@ public class UserController extends GenericController<UserDto, UserService> {
         return ResponseEntity.ok(userDto);
     }
 
+    @PreAuthorize("hasAuthority('PUBLIC')")
     @GetMapping(value = "/userDetails/{id}")
-    public UserDetailsDto getUserDetails(@PathVariable("id") long id){
+    public UserDetailsDto getUserDetails(@PathVariable long id){
         return userDetailsDtoService.getUserDetailsDtoById(id);
     }
 }
